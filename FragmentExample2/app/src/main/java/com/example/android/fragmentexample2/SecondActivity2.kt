@@ -3,11 +3,11 @@ package com.example.android.fragmentexample2
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.widget.Button
-import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+import kotlinx.android.synthetic.main.activity_main.open_button
+import kotlinx.android.synthetic.main.second_activity_main.*
+
+class SecondActivity2 : AppCompatActivity() {
     private var isFragmentDisplayed = false
     private val STATE_FRAGMENT = "state_of_fragment"
 
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.second_activity_main)
 
         open_button.setOnClickListener{
             if(!isFragmentDisplayed){
@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         //homework
-        next_button.setOnClickListener {
-            var intent = Intent(this, SecondActivity2::class.java)
+        previous_button.setOnClickListener {
+            var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
